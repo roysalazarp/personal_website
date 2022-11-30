@@ -1,0 +1,9 @@
+# Builds docker images.
+version: "3.3"
+services:
+  nginx:
+    image: roysalazarportilla/portfolio_entry_nginx:latest
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    container_name: nginx
