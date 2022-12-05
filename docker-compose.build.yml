@@ -1,12 +1,12 @@
 # Builds docker images.
 version: "3.3"
 services:
-  portfolio_entry_nginx:
-    image: roysalazarportilla/portfolio_entry_nginx:latest
+  portfolio_entry_nginx-reverse-proxy:
+    image: roysalazarportilla/portfolio_entry_nginx-reverse-proxy:latest
     build:
       dockerfile: Dockerfile
       context: ./nginx
-    container_name: portfolio_entry_nginx
+    container_name: portfolio_entry_nginx-reverse-proxy
   portfolio_entry_ui:
     image: roysalazarportilla/portfolio_entry_ui:latest
     build:

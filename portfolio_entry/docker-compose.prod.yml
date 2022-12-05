@@ -1,12 +1,12 @@
 # Runs docker images from docker hub repository.
 version: "3.3"
 services:
-  portfolio_entry_nginx:
-    image: roysalazarportilla/portfolio_entry_nginx:latest
+  portfolio_entry_nginx-reverse-proxy:
+    image: roysalazarportilla/portfolio_entry_nginx-reverse-proxy:latest
     restart: always
     ports:
       - '80:80'
-    container_name: portfolio_entry_nginx
+    container_name: portfolio_entry_nginx-reverse-proxy
     networks:
       - portfolio-network
   portfolio_entry_ui:
