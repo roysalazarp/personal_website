@@ -53,5 +53,7 @@ jobs:
             cd /home/ubuntu
             aws s3 sync s3://portfolio-roy-salazar .
             cd ./portfolio_entry
+            docker container rm -f portfolio_entry_ui portfolio_entry_nginx-reverse-proxy
+            docker image rm -f roysalazarportilla/portfolio_entry_ui:latest roysalazarportilla/portfolio_entry_nginx-reverse-proxy:latest
             docker-compose -f docker-compose.prod.yml up -d --build 
           '
