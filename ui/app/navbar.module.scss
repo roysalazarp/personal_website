@@ -1,0 +1,158 @@
+.icon_color {
+  filter: invert(75%) sepia(90%) saturate(1%) hue-rotate(0deg) brightness(102%) contrast(78%);
+
+  &:hover {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(85deg) brightness(106%) contrast(101%);
+  }
+}
+
+.linkedin {
+  background-image: url(~/assets/social-contact-icons/linkedin.svg);
+}
+
+.github {
+  background-image: url(~/assets/social-contact-icons/github.svg);
+}
+
+.calendly {
+  background-image: url(~/assets/social-contact-icons/calendly.svg);
+}
+
+.primary_navbar {
+  height: 3rem;
+  width: 85vw;
+  margin: auto;
+  display: flex;
+
+  .logo_container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-right: 1rem;
+      
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  .routes_container {
+    flex-grow: 1;
+
+    ul {
+      height: 100%;
+      align-items: center;
+      display: flex;
+      
+      li {
+        display: flex;
+        margin-left: 1rem;
+
+        &:hover {
+          color: white;
+        }
+
+        a {
+          padding: 0.5rem 1rem;
+        }
+      }
+    }
+  }
+
+  .contact_icons_container {
+    display: flex;
+    align-items: center;
+    
+    ul {
+      display: flex;
+      height: 100%;
+      align-items: center;
+
+      li a {
+        display: flex;
+        margin-left: 1rem;
+
+        i {
+          width: 1.5rem;
+          height: 1.5rem;
+          background-size: cover;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.mobile_navbar_btn_container {
+  display: none;
+}
+
+@media (max-width: 600px) {  
+  .primary_navbar_color {
+    background-color: #1A1D20;
+  }
+  
+  .primary_navbar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .logo_container {
+      width: 100%;
+      height: auto;
+      justify-content: center;
+    }
+
+    .routes_container {
+      margin-top: 1rem;
+      flex-grow: 0;
+
+      ul {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+
+        li {
+          justify-content: flex-start;
+          width: 100%;
+          margin: 0;
+        }
+      }
+    }
+    
+
+    .contact_icons_container {
+      margin-top: 1rem;
+
+      ul {
+       width: 100%;
+       height: auto;
+       justify-content: center;
+     }
+    }
+  }
+  
+  .primary_navbar .hide {
+    display: none;
+  }
+
+  .nav_full_height {
+    height: 100vh;
+  }
+  
+  .mobile_navbar_btn_container {
+    display: block;
+    position: absolute;
+    left: 1rem;
+    height: 3rem;
+    
+    button {
+      align-self: center;
+      height: 100%;
+    }
+  }
+}
