@@ -1,9 +1,9 @@
-# Builds docker images.
+# Runs docker images from docker hub repository.
 version: "3.3"
 services:
   personal_website:
     image: roysalazarportilla/personal_website:latest
-    build:
-      context: ./ui
-      dockerfile: Dockerfile
+    restart: on-failure
+    env_file:
+      - /etc/environment
     container_name: personal_website

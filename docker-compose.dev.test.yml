@@ -1,6 +1,6 @@
 version: "3.3"
 services:  
-  portfolio_entry_ui-test:
+  personal_website-test:
     build:
       context: ./ui
       dockerfile: Dockerfile.dev.test
@@ -8,4 +8,4 @@ services:
       - ./ui:/app
       - /app/node_modules
     restart: always
-    container_name: portfolio_entry_ui-test
+    container_name: personal_website-test

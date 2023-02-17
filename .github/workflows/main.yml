@@ -39,8 +39,8 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          SOURCE_DIR: 'portfolio_entry'
-          DEST_DIR: 'portfolio_entry'
+          SOURCE_DIR: 'personal_website'
+          DEST_DIR: 'personal_website'
       
       - name: Deploy docker compose file to EC2
         env:
@@ -52,8 +52,8 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i private_key ${EC2_SERVER_USER}@${EC2_SERVER_HOST} '
             cd /home/ubuntu
             aws s3 sync s3://portfolio-roy-salazar .
-            cd ./portfolio_entry
-            docker container rm -f portfolio_entry_ui portfolio_entry_nginx-reverse-proxy
-            docker image rm -f roysalazarportilla/portfolio_entry_ui:latest roysalazarportilla/portfolio_entry_nginx-reverse-proxy:latest
+            cd ./personal_website
+            docker container rm -f personal_website
+            docker image rm -f roysalazarportilla/personal_website:latest
             docker-compose -f docker-compose.prod.yml up -d --build 
           '
