@@ -5,6 +5,6 @@ COPY ./package.json ./
 RUN npm install --production
 COPY ./ ./
 RUN npm run build
-EXPOSE 5000
+EXPOSE 8081
 USER node
 CMD [ "pm2-runtime", "start", "npm", "--", "start" ]

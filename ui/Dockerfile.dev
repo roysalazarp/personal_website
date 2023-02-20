@@ -4,6 +4,6 @@ COPY package.json ./
 COPY yarn.lock ./
 RUN yarn install 
 COPY . .
-EXPOSE 5000
+EXPOSE 8081
 ENV NODE_ENV=development
 CMD [ "yarn", "dev" ]

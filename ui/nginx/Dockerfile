@@ -1,5 +1,5 @@
 FROM nginx:alpine
 RUN rm /etc/nginx/conf.d/*
 COPY ./default.conf /etc/nginx/conf.d/
-EXPOSE 5000
+EXPOSE 8081
 CMD [ "nginx", "-g", "daemon off;" ]
