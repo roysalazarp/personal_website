@@ -12,3 +12,8 @@ services:
       - '5000:5000'
     restart: on-failure
     container_name: personal_website
+    networks:
+      - my-network
+networks:
+  my-network:
+    external: true
